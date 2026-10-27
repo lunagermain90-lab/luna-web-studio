@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --fondo: #090611;
+  --panel: #151020;
+  --morado: #a855f7;
+  --morado-claro: #d8b4fe;
+  --texto: #f5f0ff;
+  --texto-suave: #b8adc9;
+  --borde: #2b1c3b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(9, 6, 17, 0.96);
+  border-bottom: 1px solid var(--borde);
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: var(--morado-claro);
+  font-size: 22px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.nav-links a {
+  color: var(--texto-suave);
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--morado-claro);
+}
+
+.hero {
+  min-height: 620px;
+  padding: 110px 7% 100px;
+  background:
+    radial-gradient(
+      circle at 80% 25%,
+      rgba(168, 85, 247, 0.16),
+      transparent 38%
+    );
+}
+
+.hero > *,
+.servicios > *,
+.nosotros > *,
+.contacto > * {
+  max-width: 1100px;
+}
+
+.etiqueta {
+  margin-bottom: 22px;
+  color: var(--morado-claro);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+h1 {
+  max-width: 900px;
+  font-size: clamp(38px, 7vw, 72px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+}
+
+h1 span {
+  color: var(--morado);
+}
+
+.descripcion {
+  max-width: 700px;
+  margin: 30px 0;
+  color: var(--texto-suave);
+  font-size: 20px;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 18px 28px;
+  border-radius: 15px;
+  background: var(--morado);
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.boton:hover {
+  background: #9333ea;
+  transform: translateY(-2px);
+}
+
+.servicios,
+.nosotros,
+.contacto {
+  padding: 90px 7%;
+}
+
+.servicios h2,
+.nosotros h2,
+.contacto h2 {
+  margin-bottom: 28px;
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.25;
+  letter-spacing: -1px;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 38px;
+}
+
+.tarjeta {
+  padding: 30px;
+  border: 1px solid var(--borde);
+  border-radius: 24px;
+  background: var(--panel);
+}
+
+.tarjeta h3 {
+  margin-bottom: 15px;
+  font-size: 23px;
+}
+
+.tarjeta p,
+.nosotros > p:last-child,
+.contacto > p:not(.etiqueta) {
+  color: var(--texto-suave);
+  font-size: 18px;
+}
+
+.nosotros {
+  background: #100b19;
+}
+
+.nosotros > p:last-child {
+  max-width: 850px;
+}
+
+.contacto {
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(147, 51, 234, 0.12),
+      transparent 65%
+    );
+}
+
+.contacto .etiqueta,
+.contacto h2,
+.contacto > p,
+.contacto .boton {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contacto > p:not(.etiqueta) {
+  max-width: 650px;
+  margin-top: 20px;
+}
+
+.boton-contacto {
+  margin-top: 35px;
+}
+
+.contacto .nota {
+  margin-top: 24px;
+  font-size: 14px !important;
+}
+
+.footer {
+  padding: 35px 20px;
+  border-top: 1px solid var(--borde);
+  color: var(--texto-suave);
+  text-align: center;
+  font-size: 17px;
+}
+
+/* Ajustes para teléfonos */
+@media (max-width: 700px) {
+  .nav {
+    padding: 16px;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .logo {
+    width: 100%;
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 12px 20px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 75px 24px 95px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 10vw, 54px);
+    letter-spacing: -1.5px;
+  }
+
+  .descripcion {
+    font-size: 18px;
+  }
+
+  .boton {
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+
+  .servicios,
+  .nosotros,
+  .contacto {
+    padding: 70px 24px;
+  }
+
+  .servicios h2,
+  .nosotros h2,
+  .contacto h2 {
+    font-size: 32px;
+  }
+
+  .tarjetas {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .tarjeta {
+    padding: 25px;
+  }
+}
